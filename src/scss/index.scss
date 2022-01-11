@@ -1,0 +1,10 @@
+// Global
+@import "./global/breakpoints";
+@import "./global/variables";
+@import "./global/mixins";
+@import "./global/reset";
+@import "./global/utilities";
+@import "./global/lazy";
+// npm Modules
+@import '../../node_modules/selectric/src/selectric';
+@import '~@fortawesome/fontawesome-free/css/all.css';

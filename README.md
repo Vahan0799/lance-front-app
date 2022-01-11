@@ -1,4 +1,4 @@
-# lance-front-app
+# remote-project
 
 
 
@@ -15,14 +15,14 @@ Already a pro? Just edit this README.md and make it your own. Want to make it ea
 
 ```
 cd existing_repo
-git remote add origin https://gitlab.com/vahan.baghdasaryan.99/lance-front-app.git
+git remote add origin https://gitlab.com/vahan.baghdasaryan.99/remote-project.git
 git branch -M main
 git push -uf origin main
 ```
 
 ## Integrate with your tools
 
-- [ ] [Set up project integrations](https://gitlab.com/-/experiment/new_project_readme_content:a78dced5349d8bffde76b263e92a6761?https://gitlab.com/vahan.baghdasaryan.99/lance-front-app/-/settings/integrations)
+- [ ] [Set up project integrations](https://gitlab.com/-/experiment/new_project_readme_content:a78dced5349d8bffde76b263e92a6761?https://gitlab.com/vahan.baghdasaryan.99/remote-project/-/settings/integrations)
 
 ## Collaborate with your team
 

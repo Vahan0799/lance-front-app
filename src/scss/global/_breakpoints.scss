@@ -1,0 +1,200 @@
+@function breakpoint-next($name, $breakpoints: $media-break-points, $breakpoint-names: map-keys($breakpoints)) {
+    $n: index($breakpoint-names, $name);
+    @if not $n {
+        @error "breakpoint `#{$name}` not found in `#{$breakpoints}`";
+    }
+    @return if($n < length($breakpoint-names), nth($breakpoint-names, $n + 1), null);
+}
+
+// Minimum breakpoint width. Null for the smallest (first) breakpoint.
+//
+//    >> breakpoint-min(sm, (xs: 576px, sm: 768px, md: 1024px, lg: 1280px, xl: 1440px))
+//    768px
+@function breakpoint-min($name, $breakpoints: $media-break-points) {
+    $min: map-get($breakpoints, $name);
+    @return if($min != 0, $min, null);
+}
+
+// Maximum breakpoint width.
+// The maximum value is reduced by 0.02px to work around the limitations of
+// `min-` and `max-` prefixes and viewports with fractional widths.
+// See https://www.w3.org/TR/mediaqueries-4/#mq-min-max
+// Uses 0.02px rather than 0.01px to work around a current rounding bug in Safari.
+// See https://bugs.webkit.org/show_bug.cgi?id=178261
+//
+//     >> breakpoint-min(sm, (xs: 576px, sm: 768px, md: 1024px, lg: 1280px, xl: 1440px))
+//    1023.98px
+@function breakpoint-max($name, $breakpoints: $media-break-points) {
+    $max: map-get($breakpoints, $name);
+    @return if($max and $max > 0, $max - .02, null);
+}
+
+// Returns a blank string if smallest breakpoint, otherwise returns the name with a dash in front.
+// Useful for making responsive utilities.
+//
+//     >> breakpoint-min(sm, (xs: 576px, sm: 768px, md: 1024px, lg: 1280px, xl: 1440px))
+//    ""  (Returns a blank string)
+//    >> breakpoint-min(sm, (xs: 576px, sm: 768px, md: 1024px, lg: 1280px, xl: 1440px))
+//    "-sm"
+@function breakpoint-infix($name, $breakpoints: $media-break-points) {
+    @return if(breakpoint-min($name, $breakpoints) == null, "", "-#{$name}");
+}
+
+// Media of at least the minimum breakpoint width. No query for the smallest breakpoint.
+// Makes the @content apply to the given breakpoint and wider.
+@mixin media-breakpoint-up($name, $breakpoints: $media-break-points) {
+    $min: breakpoint-min($name, $breakpoints);
+    @if $min {
+        @media (min-width: $min) {
+            @content;
+        }
+    } @else {
+        @content;
+    }
+}
+
+// Media of at most the maximum breakpoint width. No query for the largest breakpoint.
+// Makes the @content apply to the given breakpoint and narrower.
+@mixin media-breakpoint-down($name, $breakpoints: $media-break-points) {
+    $max: breakpoint-max($name, $breakpoints);
+    @if $max {
+        @media (max-width: $max) {
+            @content;
+        }
+    } @else {
+        @content;
+    }
+}
+
+// Media that spans multiple breakpoint widths.
+// Makes the @content apply between the min and max breakpoints
+@mixin media-breakpoint-between($lower, $upper, $breakpoints: $media-break-points) {
+    $min: breakpoint-min($lower, $breakpoints);
+    $max: breakpoint-max($upper, $breakpoints);
+
+    @if $min != null and $max != null {
+        @media (min-width: $min) and (max-width: $max) {
+            @content;
+        }
+    } @else if $max == null {
+        @include media-breakpoint-up($lower, $breakpoints) {
+            @content;
+        }
+    } @else if $min == null {
+        @include media-breakpoint-down($upper, $breakpoints) {
+            @content;
+        }
+    }
+}
+
+// Media between the breakpoint's minimum and maximum widths.
+// No minimum for the smallest breakpoint, and no maximum for the largest one.
+// Makes the @content apply only to the given breakpoint, not viewports any wider or narrower.
+@mixin media-breakpoint-only($name, $breakpoints: $media-break-points) {
+    $min: breakpoint-min($name, $breakpoints);
+    $next: breakpoint-next($name, $breakpoints);
+    $max: breakpoint-max($next);
+
+    @if $min != null and $max != null {
+        @media (min-width: $min) and (max-width: $max) {
+            @content;
+        }
+    } @else if $max == null {
+        @include media-breakpoint-up($name, $breakpoints) {
+            @content;
+        }
+    } @else if $min == null {
+        @include media-breakpoint-down($next, $breakpoints) {
+            @content;
+        }
+    }
+}
+
+
+// Very small devices (xs - 576px)
+@mixin phone($type: "") {
+    @if unquote($type) == "max" {
+        @include media-breakpoint-down(xs) {
+            @content
+        }
+    } @else {
+        @include media-breakpoint-up(xs) {
+            @content
+        }
+    }
+}
+
+// Tablet devices (sm - 768px)
+@mixin tablet($type: "") {
+    @if unquote($type) == "max" {
+        @include media-breakpoint-down(sm) {
+            @content
+        }
+    } @else {
+        @include media-breakpoint-up(sm) {
+            @content
+        }
+    }
+}
+
+// Desktop devices ( md - 1024px, lg - 1280px, xl - 1440px, xxl - 1500px )
+@mixin desktop($type: "") {
+    @if unquote($type) == "max" {
+        @include media-breakpoint-down(md) {
+            @content
+        }
+    } @else {
+        @include media-breakpoint-up(md) {
+            @content
+        }
+    }
+}
+
+@mixin lg($type: "") {
+    @if unquote($type) == "max" {
+        @include media-breakpoint-down(lg) {
+            @content
+        }
+    } @else {
+        @include media-breakpoint-up(lg) {
+            @content
+        }
+    }
+}
+
+@mixin xl($type: "") {
+    @if unquote($type) == "max" {
+        @include media-breakpoint-down(xl) {
+            @content
+        }
+    } @else {
+        @include media-breakpoint-up(xl) {
+            @content
+        }
+    }
+}
+
+@mixin xxl($type: "") {
+    @if unquote($type) == "max" {
+        @include media-breakpoint-down(xxl) {
+            @content
+        }
+    } @else {
+        @include media-breakpoint-up(xxl) {
+            @content
+        }
+    }
+}
+
+// Custom devices
+@mixin custom-min($screen) {
+    @media (min-width: $screen + "px") {
+        @content;
+    }
+}
+
+@mixin custom-max($screen) {
+    @media (max-width: $screen - 0.02 + "px") {
+        @content;
+    }
+}

@@ -1,0 +1,72 @@
+.v-hidden {
+    visibility: hidden;
+}
+
+.d-none {
+    display: none;
+}
+
+.show {
+    &-mob {
+        @include desktop() {
+            display: none;
+        }
+    }
+
+    &-desk {
+        display: none;
+        @include desktop() {
+            display: block;
+        }
+    }
+}
+
+.hide-scroll {
+    &::-webkit-scrollbar {
+        height: 0;
+        width: 0;
+
+        &-track {
+            background-color: transparent;
+        }
+
+        &-thumb {
+            background-color: transparent;
+        }
+    }
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+
+input[type='search']::-ms-clear {
+    display: none;
+    width: 0;
+    height: 0;
+}
+
+input[type='search']::-ms-reveal {
+    display: none;
+    width: 0;
+    height: 0;
+}
+
+input[type='search']::-webkit-search-decoration,
+input[type='search']::-webkit-search-cancel-button,
+input[type='search']::-webkit-search-results-button,
+input[type='search']::-webkit-search-results-decoration {
+    display: none;
+}
+
+input[type='number']::-webkit-inner-spin-button,
+input[type='number']::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input:not([type='radio']):not([type='checkbox']) {
+    border-radius: 0;
+    -webkit-appearance: none;
+}
