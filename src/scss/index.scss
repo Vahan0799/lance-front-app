@@ -6,5 +6,7 @@
 @import "./global/utilities";
 @import "./global/lazy";
 // npm Modules
-@import '../../node_modules/selectric/src/selectric';
-@import '~@fortawesome/fontawesome-free/css/all.css';
+@import "../../node_modules/selectric/src/selectric";
+@import "~@fortawesome/fontawesome-free/css/all.css";
+// Pages
+@import "./pages/privacy-policy";
