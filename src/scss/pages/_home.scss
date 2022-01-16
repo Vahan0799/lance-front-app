@@ -1,0 +1,78 @@
+.hero {
+	padding: 80px 0;
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	@include desktop() {
+		padding: 160px 0;
+	}
+
+	&__link {
+		@extend .btn-primary;
+		width: 342px;
+		height: 56px;
+		@include flex-center();
+	}
+
+	&__description {
+		&--wrapper {
+			margin-top: 80px;
+			display: flex;
+			justify-content: space-between;
+			width: 100%;
+			@include desktop(max) {
+				flex-direction: column;
+			}
+		}
+
+		&--item {
+			@include desktop(max) {
+				margin-bottom: 25px;
+			}
+			@include between(md, xl) {
+				margin-right: 20%;
+			}
+
+			&:last-child {
+				margin-right: unset;
+			}
+
+			h4 {
+				font-size: 20px;
+				font-weight: 700;
+				line-height: 30px;
+				display: flex;
+				align-items: center;
+				margin-bottom: 18px;
+				color: $white;
+
+				img {
+					margin-right: 13px;
+				}
+			}
+		}
+	}
+}
+
+.trade {
+	&--online {
+		@include flex-center();
+		flex-direction: column;
+
+		h2 {
+			margin-bottom: 50px;
+			@include desktop() {
+				margin-bottom: 80px;
+			}
+		}
+
+		img {
+			@include desktop(max){
+				width: 100%;
+			}
+			@include lg(max){
+				width: 95%;
+			}
+		}
+	}
+}

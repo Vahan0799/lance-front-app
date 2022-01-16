@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../build/dist/css/custom.min.css">
+    <title>Tools</title>
+</head>
+
+<style>
+    @font-face {
+        font-family: 'Roboto';
+        src: url("../build/assets/fonts/Roboto-Regular.ttf") format('truetype');
+        font-weight: 400;
+        font-display: swap;
+    }
+
+    @font-face {
+        font-family: 'Roboto';
+        src: url("../build/assets/fonts/Roboto-Bold.ttf") format('truetype');
+        font-weight: 700;
+        font-display: swap;
+    }
+
+    @font-face {
+        font-family: 'Inter';
+        src: url("../build/assets/fonts/Inter-Regular.ttf") format('truetype');
+        font-weight: 400;
+        font-display: swap;
+    }
+
+    @font-face {
+        font-family: 'Inter';
+        src: url("../build/assets/fonts/Inter-Light.ttf") format('truetype');
+        font-weight: 300;
+        font-display: swap;
+    }
+</style>
+
+<body>
+<!--Begin Site-->
+<div class="wrapper">
+
+    <!--Begin Header-->
+    <header class="header">
+        <nav class="nav">
+            <div class="nav__header">
+                <a href="#" class="nav__logo">Logo</a>
+                <button class="nav__list--open">
+                    <img src="../build/assets/svgs/hamburger.svg" alt="">
+                </button>
+            </div>
+            <div class="nav__list">
+                <p class="nav__list--item">8-800-2002-600</p>
+                <button class="nav__list--item">
+                    <img src="../build/assets/svgs/call.svg" alt="">
+                    Онлайн звонок
+                </button>
+                <button class="nav__list--item web__login">Login</button>
+                <button class="nav__list--item web__language">
+                    <img src="../build/assets/svgs/lang-icon.svg" alt="">
+                </button>
+                <button class="nav__list--close">
+                    <img src="../build/assets/svgs/close-menu.svg" alt="">
+                </button>
+            </div>
+        </nav>
+    </header>
+    <!--./End header-->
+
+    <main>
+        <!--Begin Modal-->
+        <section class="modal">
+            <div class="modal__wrapper">
+                <div class="modal__container">
+                    <button class="modal__close" type="button">
+                        <img src="../build/assets/svgs/close-modal.svg" alt="">
+                    </button>
+                    <form action="#" class="login">
+                        <div class="modal__container--items">
+                            <h3>Welcome back</h3>
+                            <div class="modal__input--wrapper">
+                                <div class="modal__input">
+                                    <label for="login-email">Email</label>
+                                    <input type="email" id="login-email" placeholder="Email">
+                                </div>
+                                <div class="modal__input">
+                                    <label for="login-pass">Password</label>
+                                    <input class="password" type="password" id="login-pass" placeholder="Password">
+                                    <button class="show-hide-password" type="button">
+                                        <img src="../build/assets/svgs/eye-hidden.svg" alt=""
+                                             class="show-password">
+                                        <img src="../build/assets/svgs/eye-visible.svg" alt=""
+                                             class="hide-password">
+                                    </button>
+                                </div>
+                                <button class="modal__forgot--password" type="button">
+                                    Forgot password?
+                                </button>
+                                <div class="modal__buttons">
+                                    <button class="modal__submit">Sign Up</button>
+                                    <p>Don’t have an account?</p>
+                                    <button class="create-account" type="button">Create Account</button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                    <form action="#" class="register">
+                        <div class="modal__container--items">
+                            <h3>Welcome</h3>
+                            <div class="modal__input--wrapper">
+                                <div class="modal__input">
+                                    <label for="name">Name</label>
+                                    <input type="text" id="name" placeholder="Name">
+                                </div>
+                                <div class="modal__input">
+                                    <label for="surname">Surname</label>
+                                    <input type="text" id="surname" placeholder="Surname">
+                                </div>
+                                <div class="modal__input">
+                                    <label for="email">Email</label>
+                                    <input type="email" id="email" placeholder="Email">
+                                </div>
+                                <div class="modal__input">
+                                    <label for="phone">Phone</label>
+                                    <input type="number" id="phone" placeholder="Phone">
+                                </div>
+                                <div class="modal__input">
+                                    <label for="pass">Password</label>
+                                    <input class="password" type="password" id="pass" placeholder="Password">
+                                    <button class="show-hide-password" type="button">
+                                        <img src="../build/assets/svgs/eye-hidden.svg" alt=""
+                                             class="show-password">
+                                        <img src="../build/assets/svgs/eye-visible.svg" alt=""
+                                             class="hide-password">
+                                    </button>
+                                </div>
+                                <div class="modal__input">
+                                    <label for="retry-pass">Retry Password</label>
+                                    <input class="password" type="password" id="retry-pass"
+                                           placeholder="Retry Password">
+                                    <button class="show-hide-password" type="button">
+                                        <img src="../build/assets/svgs/eye-hidden.svg" alt=""
+                                             class="show-password">
+                                        <img src="../build/assets/svgs/eye-visible.svg" alt=""
+                                             class="hide-password">
+                                    </button>
+                                </div>
+                                <p class="">By continuing you agree to our
+                                    <a href="#">Terms of Service</a> and
+                                    <a href="#">Privacy Policy</a>
+                                </p>
+                                <div class="modal__buttons">
+                                    <button class="modal__submit">Sign Up</button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+        <!--./End Modal-->
+
+        <!--Begin Navigation Panel-->
+        <section class="web__navbar">
+            <div class="web__navbar--list">
+                <!--Add 'tab--active' class on
+                active route 'web__navbar--tab--wrapper'-->
+                <div class="web__navbar--tab--wrapper">
+                    <a href="#" class="web__navbar--link">Как заработать</a>
+                    <div class="web__navbar--dropdown">
+                        <a href="#" class="dropdown__link">
+                            <img src="../build/assets/svgs/quick-start.svg" alt="">
+                            <div>
+                                <p>Быстрый старт</p>
+                                <span>Что такое учебный и торговый счета</span>
+                            </div>
+                        </a>
+                        <a href="#" class="dropdown__link">
+                            <img src="../build/assets/svgs/transfers.svg" alt="">
+                            <div>
+                                <p>Пополнение и снятие</p>
+                                <span>Пополнение счета и снятие средств</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="web__navbar--tab--wrapper tab--active">
+                    <a href="#" class="web__navbar--link">Инструменты</a>
+                </div>
+                <div class="web__navbar--tab--wrapper">
+                    <a href="#" class="web__navbar--link">Обучение</a>
+                </div>
+                <div class="web__navbar--tab--wrapper">
+                    <a href="#" class="web__navbar--link">О нас</a>
+                </div>
+            </div>
+            <div class="web__navbar--history">
+                <div class="history__link--wrapper">
+                    <a href="#" class="history__link">Главная</a>
+                    <a href="#" class="history__link history__link--active">
+                        <img src="../build/assets/svgs/chevron-right.svg" alt="">
+                        Инструменты
+                    </a>
+                </div>
+            </div>
+        </section>
+        <!-- ./End Navigation Panel-->
+
+        <!--Begin Tools section-->
+        <section class="tools">
+            <h2>Инструменты</h2>
+            <p>
+                Существуют активы, которые меняются с меньшей интенсивностью, нежели валюты, но при этом также
+                <br/> позволяют получать ощутимую прибыль. Помимо 54 валютных пар, у вас имеется
+                возможность торговли по 72 <br/>инструментам CFD (нефть, цветные металлы, акции,
+                индексы),
+                золотом и серебром, а также Биткоином на <br/>наиболее выгодных для вас условиях
+            </p>
+            <div class="tools__link--wrapper">
+                <a href="#" class="tools__link">
+                    <img src="../build/assets/images/forex.png" alt="">
+                    Forex
+                </a>
+                <a href="#" class="tools__link">
+                    <img src="../build/assets/images/oil-and-gas.png" alt="">
+                    Нефть и газ
+                </a>
+                <a href="#" class="tools__link">
+                    <img src="../build/assets/images/stock.png" alt="">
+                    Акции
+                </a>
+                <a href="#" class="tools__link">
+                    <img src="../build/assets/images/agricultural-products.png" alt="">
+                    Сельхозтовары
+                </a>
+                <a href="#" class="tools__link">
+                    <img src="../build/assets/images/metals.png" alt="">
+                    Металлы
+                </a>
+                <a href="#" class="tools__link">
+                    <img src="../build/assets/images/indicies.png" alt="">
+                    Индексы
+                </a>
+            </div>
+        </section>
+        <!--./End Tools section-->
+    </main>
+
+    <!--Begin Footer-->
+    <footer class="footer">
+        <div class="footer__content--wrapper">
+            <div class="footer__link--wrapper">
+                <div class="footer__link--container">
+                    <a href="#">Как заработать</a>
+                    <a href="#">Быстрый старт</a>
+                    <a href="#">С какой суммы начать</a>
+                    <a href="#">VIP-условия</a>
+                    <a href="#">Пополнение и снятие</a>
+                    <a href="#">Акции и бонусы</a>
+                </div>
+                <div class="footer__link--container">
+                    <a href="#">Платформы</a>
+                    <a href="#">Торговать онлайн</a>
+                    <a href="#">iPhone и Android</a>
+                    <a href="#">MetaTrader 5</a>
+                    <a href="#">MetaTrader 4</a>
+                    <a href="#">Дополнительно</a>
+                </div>
+                <div class="footer__link--container">
+                    <a href="#">Готовые решения</a>
+                    <a href="#">Модельные портфели</a>
+                    <a href="#">Инвестиционные идеи</a>
+                </div>
+                <div class="footer__link--container">
+                    <a href="#">Инструменты</a>
+                    <a href="#">Индексы</a>
+                    <a href="#">Валюты</a>
+                    <a href="#">Металлы</a>
+                    <a href="#">Нефть и газ</a>
+                    <a href="#">Сельхозтовары</a>
+                </div>
+                <div class="footer__link--container">
+                    <a href="#">Обучение</a>
+                    <a href="#">Вводный вебинар</a>
+                    <a href="#">Базовый курс</a>
+                    <a href="#">Об академии</a>
+                </div>
+                <div class="footer__link--container">
+                    <a href="#">О нас</a>
+                    <a href="#">О компании</a>
+                    <a href="#">Контакты</a>
+                    <a href="#">Партнерская программа</a>
+                    <a href="#">IB партнерство</a>
+                </div>
+            </div>
+            <div class="footer__payment">
+                <p>Пополнение счета и снятие средств</p>
+                <div class="footer__payment--methods">
+                    <img src="../build/assets/svgs/visa.svg" alt="">
+                    <img src="../build/assets/svgs/master-card.svg" alt="">
+                    <img src="../build/assets/svgs/yandex-pay.svg" alt="">
+                    <img src="../build/assets/svgs/mnp.svg" alt="">
+                    <img src="../build/assets/svgs/paypal.svg" alt="">
+                    <img src="../build/assets/svgs/webmoney.svg" alt="">
+                </div>
+            </div>
+        </div>
+        <div class="footer__copyright--policy">
+            <p>© 1997–2018, Forex Club International Limited</p>
+            <a href="#">Privacy Policy</a>
+        </div>
+    </footer>
+    <!--./End Footer-->
+</div>
+<script src="../build/dist/js/custom.min.js"></script>
+</body>
+
+</html>

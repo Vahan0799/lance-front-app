@@ -145,3 +145,18 @@ $default-pixel: 16;
         @content
     }
 }
+
+// Flex Center Alignment
+@mixin flex-center($alignment: ""){
+    @if unquote($alignment) == "align-center"{
+        display: flex;
+        align-items: center;
+    } @else if unquote($alignment) == "justify-center"{
+        display: flex;
+        justify-content: center;
+    } @else {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
