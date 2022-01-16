@@ -7,18 +7,14 @@
         "watch": "gulp",
         "watch-webpack": "webpack --config webpack.config.js --mode production --watch"
     },
-
     "dependencies": {
         "imagemin-mozjpeg": "^9.0.0",
         "imagemin-optipng": "^8.0.0",
         "jquery": "^3.5.1",
         "jquery.cookie": "^1.4.1",
-        "selectric": "^1.13.0",
-        "vanilla-lazyload": "^17.3.1",
         "vinyl-fs": "^3.0.3"
     },
     "devDependencies": {
-        "@fortawesome/fontawesome-free": "^5.15.4",
         "@babel/core": "^7.13.14",
         "@babel/preset-env": "^7.13.12",
         "autoprefixer": "^10.1.0",

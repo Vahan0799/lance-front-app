@@ -4,9 +4,21 @@
 @import "./global/mixins";
 @import "./global/reset";
 @import "./global/utilities";
-@import "./global/lazy";
-// npm Modules
-@import "../../node_modules/selectric/src/selectric";
-@import "~@fortawesome/fontawesome-free/css/all.css";
+@import "./global/configs";
+
+// Components
+@import "./components/buttons";
+@import "./components/modal";
+@import "./components/web";
+
+// Layouts
+@import "./layouts/header";
+@import "./layouts/footer";
+
 // Pages
-@import "./pages/privacy-policy";
+@import "./pages/home";
+@import "./pages/quick-start";
+@import "./pages/deposit-and-withdrawal";
+@import "./pages/tools";
+@import "./pages/education";
+@import "./pages/about";

@@ -1,0 +1,105 @@
+//@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400&family=Roboto:wght@400;700&display=swap');
+
+body {
+	background-color: $background-300;
+}
+
+.wrapper {
+	@include desktop(max) {
+		position: relative;
+		overflow-x: hidden;
+		height: 100vh;
+	}
+	@include xl() {
+		padding: 0;
+	}
+}
+
+//  Breaks only for 1024px+ devices, unless 'show-both' class added
+br {
+	@extend .show-desk;
+
+	&.show-both {
+		display: block !important;
+	}
+}
+
+main {
+	margin-top: 25px !important;
+	padding-bottom: 80px !important;
+	@include desktop() {
+		padding-bottom: 240px !important;
+	}
+	@extend .mob-container;
+	@extend .md-container;
+}
+
+header, main {
+	@include xl() {
+		padding: 0;
+		max-width: 1360px;
+		margin: 0 auto;
+	}
+}
+
+button {
+	display: flex;
+	align-items: center;
+	border: none;
+	padding: 0;
+	background-color: transparent;
+	outline: none;
+	cursor: pointer;
+}
+
+h1, h2, h3, h4, h5, a, p, span,
+li, button {
+	font-family: 'Roboto', sans-serif;
+	color: $gray-200;
+}
+
+input, label {
+	font-family: 'Inter', sans-serif;
+	font-weight: 300;
+}
+
+p {
+	font-size: 16px;
+	line-height: 24px;
+	color: $gray-200;
+}
+
+h1 {
+	font-size: 64px;
+	line-height: 76px;
+	color: $gray-200;
+}
+
+h2 {
+	font-size: 26px;
+	line-height: 35px;
+	color: $gray-200;
+	margin-bottom: 25px;
+	@include desktop() {
+		font-size: 48px;
+		line-height: 54px;
+		margin-bottom: 40px;
+	}
+}
+
+h3 {
+	font-size: 24px;
+	line-height: 40px;
+	color: $gray-200;
+	margin-bottom: 40px;
+	@include desktop() {
+		font-size: 32px;
+		margin-bottom: 80px;
+	}
+}
+
+h4 {
+	font-size: 24px;
+	line-height: 36px;
+	color: $gray-200;
+}

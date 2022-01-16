@@ -1,0 +1,109 @@
+.quick-start {
+	&--wrapper {
+		h2 {
+			margin-bottom: 25px;
+			@include desktop() {
+				line-height: 56px;
+				margin-bottom: 40px;
+			}
+		}
+
+		h3 {
+			margin-bottom: unset;
+			@include desktop(max) {
+				font-size: 20px;
+				line-height: 30px;
+			}
+		}
+
+		.description--content {
+			p, span {
+				font-size: 14px;
+				line-height: 27px;
+				margin-bottom: 20px;
+				@include desktop() {
+					margin-bottom: 40px;
+					font-size: 18px;
+				}
+
+				&:last-child {
+					margin-bottom: 0;
+				}
+			}
+
+			&__finance {
+				p {
+					margin-bottom: 24px;
+				}
+			}
+		}
+	}
+
+	&--description {
+		&__1 {
+			@include flex-center(align-center);
+			justify-content: space-between;
+			flex-direction: column;
+			margin: 50px 0 25px;
+			@include desktop() {
+				flex-direction: row;
+				margin: 90px 0 120px;
+			}
+			@include between(md, xl) {
+				align-items: flex-start;
+			}
+
+			img {
+				@include desktop(max) {
+					margin-bottom: 15px;
+				}
+				@include between(md, lg) {
+					margin-right: 45px;
+				}
+			}
+		}
+
+		&__2 {
+			margin-bottom: 40px;
+			@include desktop() {
+				margin-bottom: 80px;
+			}
+
+			h4 {
+				margin-bottom: 15px;
+				@include desktop() {
+					margin-bottom: 24px;
+				}
+			}
+		}
+
+		&__3 {
+			h4 {
+				margin-bottom: 40px;
+				@include desktop() {
+					margin-bottom: 80px;
+				}
+			}
+
+			.description--content {
+				@include flex-center(align-center);
+				justify-content: space-between;
+				@include desktop(max) {
+					flex-direction: column-reverse;
+				}
+				@include between(md, xl) {
+					align-items: flex-start;
+				}
+
+				img {
+					@include desktop(max) {
+						margin-bottom: 15px;
+					}
+					@include between(md, lg) {
+						margin-left: 45px;
+					}
+				}
+			}
+		}
+	}
+}
