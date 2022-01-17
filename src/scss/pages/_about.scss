@@ -105,6 +105,13 @@
 			margin-right: 40px;
 		}
 
+		& > iframe {
+			@include desktop(max) {
+				width: 100% !important;
+				height: 100% !important;
+			}
+		}
+
 		& > img {
 			@include desktop(max) {
 				width: 100%;
