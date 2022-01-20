@@ -1,105 +1,105 @@
 .header {
-	@include desktop(max) {
-		padding: 0 20px;
-		border-bottom: 1px solid $gray-1000;
-		background-color: rgba($background-200, 0.6);
+    @include desktop(max) {
+	padding: 0 20px;
+	border-bottom: 1px solid $gray-1000;
+	background-color: rgba($background-200, 0.6);
+    }
+
+    .nav {
+	$self: #{nav};
+	padding: 15px 0;
+	@extend .md-container;
+	@include desktop() {
+	    display: flex;
+	    justify-content: space-between;
+	    align-items: center;
+	    padding: 43px 0;
 	}
 
-	.nav {
-		$self: #{nav};
-		padding: 15px 0;
-		@extend .md-container;
-		@include desktop() {
-			display: flex;
-			justify-content: space-between;
-			align-items: center;
-			padding: 43px 0;
-		}
+	&__header {
+	    @include desktop(max) {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+	    }
 
-		&__header {
-			@include desktop(max) {
-				display: flex;
-				align-items: center;
-				justify-content: space-between;
-			}
-
-			.#{$self}__logo {
-				font-size: 24px;
-				font-weight: 400;
-				line-height: 36px;
-				color: $white;
-			}
-		}
-
-		&__list {
-			display: flex;
-			align-items: center;
-			@include desktop(max) {
-				height: 100vh;
-				position: absolute;
-				width: 70%;
-				top: 0;
-				right: -500px;
-				z-index: 10;
-				flex-direction: column-reverse;
-				justify-content: center;
-				background-color: $background-100;
-				box-shadow: -4px 2px 13px -2px rgba(0, 0, 0, 0.65);
-				transition: right 0.5s ease;
-			}
-			@include desktop() {
-				justify-content: flex-end;
-			}
-			@include between(sm, lg) {
-				width: 50%;
-			}
-
-			&--active {
-				right: 0;
-			}
-
-			&--open {
-				@extend .show-mob;
-				width: 44px;
-				height: 44px;
-				border: 1px solid $primary;
-				border-radius: 100%;
-				justify-content: center;
-			}
-
-			&--close {
-				@extend .show-mob;
-				position: absolute;
-				top: 20px;
-				left: 25px;
-
-				img {
-					width: 15px;
-				}
-			}
-
-			&--item {
-				@include desktop(max) {
-					margin-bottom: 25px;
-				}
-				@include between(md, lg) {
-					margin-right: 12px;
-					font-size: 14px;
-				}
-				@include lg() {
-					margin-right: 24px;
-					font-size: 16px;
-				}
-
-				&:first-child {
-					color: $white;
-				}
-
-				&:nth-child(2) {
-					@extend .btn-primary-2;
-					justify-content: space-around;
-				}
-			}
-		}
+	    .#{$self}__logo {
+		font-size: 24px;
+		font-weight: 400;
+		line-height: 36px;
+		color: $white;
+	    }
 	}
+
+	&__list {
+	    display: flex;
+	    align-items: center;
+	    @include desktop(max) {
+		height: 100vh;
+		position: absolute;
+		width: 70%;
+		top: 0;
+		right: -500px;
+		z-index: 10;
+		flex-direction: column-reverse;
+		justify-content: center;
+		background-color: $background-100;
+		box-shadow: -4px 2px 13px -2px rgba(0, 0, 0, 0.65);
+		transition: right 0.5s ease;
+	    }
+	    @include desktop() {
+		justify-content: flex-end;
+	    }
+	    @include between(sm, lg) {
+		width: 50%;
+	    }
+
+	    &--active {
+		right: 0;
+	    }
+
+	    &--open {
+		@extend .show-mob;
+		width: 44px;
+		height: 44px;
+		border: 1px solid $primary;
+		border-radius: 100%;
+		justify-content: center;
+	    }
+
+	    &--close {
+		@extend .show-mob;
+		position: absolute;
+		top: 20px;
+		left: 25px;
+
+		img {
+		    width: 15px;
+		}
+	    }
+
+	    &--item {
+		@include desktop(max) {
+		    margin-bottom: 25px;
+		}
+		@include between(md, lg) {
+		    margin-right: 12px;
+		    font-size: 14px;
+		}
+		@include lg() {
+		    margin-right: 24px;
+		    font-size: 16px;
+		}
+
+		&:first-child {
+		    color: $white;
+		}
+
+		&:nth-child(2) {
+		    @extend .btn-primary-2;
+		    justify-content: space-around;
+		}
+	    }
+	}
+    }
 }

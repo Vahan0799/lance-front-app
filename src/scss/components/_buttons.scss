@@ -1,40 +1,40 @@
 .btn {
-	&-primary {
-		font-family: 'Roboto', sans-serif;
-		font-size: 16px;
-		font-weight: 400;
-		color: $white;
-		background-color: $primary;
-		border-radius: 16px;
-		padding: 11px 0;
-		width: 120px;
-		justify-content: center;
-	}
+    &-primary {
+	font-family: 'Roboto', sans-serif;
+	font-size: 16px;
+	font-weight: 400;
+	color: $white;
+	background-color: $primary;
+	border-radius: 16px;
+	padding: 11px 0;
+	width: 120px;
+	justify-content: center;
+    }
 
-	&-primary-2 {
-		font-family: 'Roboto', sans-serif;
-		font-size: 16px;
-		font-weight: 400;
-		color: $primary;
-		border: 1px solid $primary;
-		border-radius: 16px;
-		padding: 11px 12px;
-		width: 169px;
+    &-primary-2 {
+	font-family: 'Roboto', sans-serif;
+	font-size: 16px;
+	font-weight: 400;
+	color: $primary;
+	border: 1px solid $primary;
+	border-radius: 16px;
+	padding: 11px 12px;
+	width: 169px;
 
-		&:hover {
-			background-color: $background-200;
-		}
+	&:hover {
+	    background-color: $background-200;
 	}
+    }
 
-	&-gray{
-		background-color: $background-100;
-		padding: 6px 8px;
-		line-height: 20px;
-		font-size: 14px;
-		border: 1px solid $gray-800;
-		border-radius: 12px;
-		color: $gray-800;
-		text-align: center;
-		@include flex-center();
-	}
+    &-gray {
+	background-color: $background-100;
+	padding: 6px 8px;
+	line-height: 20px;
+	font-size: 14px;
+	border: 1px solid $gray-800;
+	border-radius: 12px;
+	color: $gray-800;
+	text-align: center;
+	@include flex-center();
+    }
 }

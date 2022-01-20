@@ -6,6 +6,9 @@
 @import "./global/utilities";
 @import "./global/configs";
 
+// npm module
+@import "~@fortawesome/fontawesome-free/css/all.css";
+
 // Components
 @import "./components/buttons";
 @import "./components/modal";
