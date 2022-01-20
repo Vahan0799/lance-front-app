@@ -1,113 +1,109 @@
 .footer {
-	$footer: #{footer};
-	width: 100%;
-	background-color: $background-200;
-	padding: 40px 25px;
+    $footer: #{footer};
+    width: 100%;
+    background-color: $background-200;
+    padding: 40px 25px;
+    display: flex;
+    flex-direction: column;
+    @extend .md-container;
+    @include desktop() {
+	padding: 40px 0;
+	min-height: 368px;
+    }
+
+    &__content--wrapper {
 	display: flex;
 	flex-direction: column;
-	@extend .md-container;
 	@include desktop() {
-		padding: 40px 0;
-		min-height: 368px;
+	    flex-direction: row;
+	    justify-content: space-between;
+	}
+	@include xl() {
+	    padding: 0;
+	    max-width: 1360px;
+	    margin: 0 auto;
 	}
 
-	&__content--wrapper {
-		display: flex;
-		flex-direction: column;
+	.#{$footer}__link {
+	    &--wrapper {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		grid-gap: 40px;
 		@include desktop() {
-			flex-direction: row;
-			justify-content: space-between;
+		    grid-gap: 5px;
+		    grid-template-columns: repeat(6, 1fr);
+		}
+		@include lg() {
+		    grid-gap: 20px;
+		    margin-right: 45px;
 		}
 		@include xl() {
-			padding: 0;
-			max-width: 1360px;
-			margin: 0 auto;
+		    grid-gap: 24px;
 		}
-
-		.#{$footer}__link {
-			&--wrapper {
-				display: grid;
-				grid-template-columns: repeat(2, 1fr);
-				grid-gap: 40px;
-				@include desktop() {
-					grid-gap: 5px;
-					grid-template-columns: repeat(6, 1fr);
-				}
-				@include lg() {
-					grid-gap: 20px;
-					margin-right: 45px;
-				}
-				@include between(sm, md) {
-					grid-template-columns: repeat(3, 1fr);
-				}
-			}
-
-			&--container {
-				display: flex;
-				flex-direction: column;
-
-				a {
-					color: $gray-800;
-					font-size: 14px;
-					text-decoration: underline;
-					margin-bottom: 16px;
-					line-height: 20px;
-					@include between(md, lg) {
-						font-size: 12px;
-					}
-
-					&:last-child {
-						margin-bottom: 0;
-					}
-				}
-
-				&:nth-child(even) {
-					@include tablet(max) {
-						a {
-							text-align: right;
-						}
-					}
-				}
-			}
+		@include between(sm, md) {
+		    grid-template-columns: repeat(3, 1fr);
 		}
-	}
+	    }
 
-	&__payment {
+	    &--container {
 		display: flex;
 		flex-direction: column;
-		@include desktop(max) {
-			align-items: center;
-			margin-top: 50px;
-		}
-
-		p {
-			font-size: 13px;
-			line-height: 20px;
-			color: $gray-800;
-			margin-bottom: 28px;
-		}
-
-		&--methods {
-			display: grid;
-			grid-gap: 30px;
-			grid-template-columns: repeat(3, auto);
-		}
-	}
-
-	&__copyright--policy {
-		margin-top: 40px;
-		@include flex-center();
-		flex-direction: column;
-
-		p, a {
-			color: $gray-800;
-			font-size: 14px;
-			line-height: 20px;
-			margin-bottom: 8px;
-		}
 
 		a {
+		    color: $gray-800;
+		    font-size: 14px;
+		    text-decoration: underline;
+		    margin-bottom: 16px;
+		    line-height: 20px;
+		    width: fit-content;
+		    @include between(md, lg) {
+			font-size: 12px;
+		    }
+
+		    &:last-child {
 			margin-bottom: 0;
+		    }
 		}
+	    }
 	}
+    }
+
+    &__payment {
+	display: flex;
+	flex-direction: column;
+	@include desktop(max) {
+	    align-items: center;
+	    margin-top: 50px;
+	}
+
+	p {
+	    font-size: 13px;
+	    line-height: 20px;
+	    color: $gray-800;
+	    margin-bottom: 28px;
+	}
+
+	&--methods {
+	    display: grid;
+	    grid-gap: 30px;
+	    grid-template-columns: repeat(3, auto);
+	}
+    }
+
+    &__copyright--policy {
+	margin-top: 40px;
+	@include flex-center();
+	flex-direction: column;
+
+	p, a {
+	    color: $gray-800;
+	    font-size: 14px;
+	    line-height: 20px;
+	    margin-bottom: 8px;
+	}
+
+	a {
+	    margin-bottom: 0;
+	}
+    }
 }

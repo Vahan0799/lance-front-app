@@ -29,12 +29,10 @@ export default class Global {
     // Close modal on outside click
     outSideClose() {
         const modal = $('.modal');
-        const openModal = $('.web__login');
-        const closeModal = $('.modal__close');
         const body = document.querySelector('body');
 
-        openModal.on('click', showModal);
-        closeModal.on('click', hideModal);
+        $('.web__login').on('click', showModal);
+        $('.modal__close').on('click', hideModal);
 
         $(window).on('click', event => {
             if (!modal.hasClass('modal--active')) return
