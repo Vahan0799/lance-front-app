@@ -1,4 +1,5 @@
 import $ from 'jquery';
+import {clickOutSide} from "./_utilities";
 
 export default class Global {
     constructor() {
@@ -7,6 +8,7 @@ export default class Global {
 
     init() {
         this.toggleSidebar();
+        this.toggleLangBtn();
         this.outSideClose();
         this.showPassword();
         this.toggleModalContent();
@@ -18,7 +20,9 @@ export default class Global {
         let body = document.querySelector('body');
         $('.nav__list--open').on('click', () => {
             $('.nav__list').addClass('nav__list--active');
+            $('.web__language').removeClass('open')
             body.style.overflow = 'hidden';
+
         })
         $('.nav__list--close').on('click', () => {
             $('.nav__list').removeClass('nav__list--active');
@@ -26,23 +30,36 @@ export default class Global {
         })
     }
 
+    //Expand and collapse language options
+    toggleLangBtn() {
+        $('.web__language--btn').on('click', () => {
+            $('.web__language').toggleClass('open')
+        })
+
+        //close on outside click
+        clickOutSide('.web__language', '.web__language', 'open')
+
+        //Button active state
+        $('.web__language--item').on('click', function () {
+            $(this).addClass('active');
+            $(this).siblings().removeClass('active');
+        })
+    }
+
     // Close modal on outside click
     outSideClose() {
         const modal = $('.modal');
-        const body = document.querySelector('body');
+        const body = $('body');
 
         $('.web__login').on('click', showModal);
         $('.modal__close').on('click', hideModal);
 
-        $(window).on('click', event => {
-            if (!modal.hasClass('modal--active')) return
-            if (!event.target.closest('.modal__container')) hideModal()
-        })
+        clickOutSide('.modal', '.modal__container', 'modal--active', hideModal)
 
         function showModal(event) {
             event.stopPropagation();
             modal.addClass('modal--active');
-            body.style.overflow = 'hidden';
+            body.css('overflow', 'hidden')
         }
 
         function hideModal(event) {
@@ -50,7 +67,7 @@ export default class Global {
             $('.modal__container form').each(function () {
                 $(this)[0].reset();
             })
-            body.style.overflow = '';
+            body.css('overflow', '')
             $('.register').hide();
             $('.login').show();
         }

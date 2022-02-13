@@ -5,37 +5,37 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../build/dist/css/custom.min.css">
+    <link rel="stylesheet" href="../dist/css/custom.min.css">
     <title>Education</title>
 </head>
 
 <style>
     @font-face {
-	font-family: 'Roboto';
-	src: url("../build/assets/fonts/Roboto-Regular.ttf") format('truetype');
-	font-weight: 400;
-	font-display: swap;
+        font-family: 'Roboto';
+        src: url("../src/assets/fonts/Roboto-Regular.ttf") format('truetype');
+        font-weight: 400;
+        font-display: swap;
     }
 
     @font-face {
-	font-family: 'Roboto';
-	src: url("../build/assets/fonts/Roboto-Bold.ttf") format('truetype');
-	font-weight: 700;
-	font-display: swap;
+        font-family: 'Roboto';
+        src: url("../src/assets/fonts/Roboto-Bold.ttf") format('truetype');
+        font-weight: 700;
+        font-display: swap;
     }
 
     @font-face {
-	font-family: 'Inter';
-	src: url("../build/assets/fonts/Inter-Regular.ttf") format('truetype');
-	font-weight: 400;
-	font-display: swap;
+        font-family: 'Inter';
+        src: url("../src/assets/fonts/Inter-Regular.ttf") format('truetype');
+        font-weight: 400;
+        font-display: swap;
     }
 
     @font-face {
-	font-family: 'Inter';
-	src: url("../build/assets/fonts/Inter-Light.ttf") format('truetype');
-	font-weight: 300;
-	font-display: swap;
+        font-family: 'Inter';
+        src: url("../src/assets/fonts/Inter-Light.ttf") format('truetype');
+        font-weight: 300;
+        font-display: swap;
     }
 </style>
 
@@ -49,21 +49,34 @@
             <div class="nav__header">
                 <a href="#" class="nav__logo">Logo</a>
                 <button class="nav__list--open">
-                    <img src="../build/assets/svgs/hamburger.svg" alt="">
+                    <img src="../src/assets/svgs/hamburger.svg" alt="">
                 </button>
+                <div class="nav__list--item web__language">
+                    <button class="web__language--btn">
+                        <img src="../src/assets/svgs/lang-icon.svg" alt="">
+                    </button>
+                    <div class="web__language--list">
+                        <button class="web__language--item">
+                            <img src="../src/assets/svgs/us.svg" alt="">
+                        </button>
+                        <button class="web__language--item active">
+                            <img src="../src/assets/svgs/ru.svg" alt="">
+                        </button>
+                        <button class="web__language--item">
+                            <img src="../src/assets/svgs/us.svg" alt="">
+                        </button>
+                    </div>
+                </div>
             </div>
             <div class="nav__list">
                 <p class="nav__list--item">8-800-2002-600</p>
-                <button class="nav__list--item">
-                    <img src="../build/assets/svgs/call.svg" alt="">
+                <button class="nav__list--item btn-primary-2">
+                    <img src="../src/assets/svgs/call.svg" alt="">
                     Онлайн звонок
                 </button>
-                <button class="nav__list--item web__login">Login</button>
-                <button class="nav__list--item web__language">
-                    <img src="../build/assets/svgs/lang-icon.svg" alt="">
-                </button>
+                <button class="nav__list--item btn-primary web__login">Login</button>
                 <button class="nav__list--close">
-                    <img src="../build/assets/svgs/close-menu.svg" alt="">
+                    <img src="../src/assets/svgs/close-menu.svg" alt="">
                 </button>
             </div>
         </nav>
@@ -76,7 +89,7 @@
             <div class="modal__wrapper">
                 <div class="modal__container">
                     <button class="modal__close" type="button">
-                        <img src="../build/assets/svgs/close-modal.svg" alt="">
+                        <img src="../src/assets/svgs/close-modal.svg" alt="">
                     </button>
                     <form action="#" class="login">
                         <div class="modal__container--items">
@@ -90,9 +103,9 @@
                                     <label for="login-pass">Password</label>
                                     <input class="password" type="password" id="login-pass" placeholder="Password">
                                     <button class="show-hide-password" type="button">
-                                        <img src="../build/assets/svgs/eye-hidden.svg" alt=""
+                                        <img src="../src/assets/svgs/eye-hidden.svg" alt=""
                                              class="show-password">
-                                        <img src="../build/assets/svgs/eye-visible.svg" alt=""
+                                        <img src="../src/assets/svgs/eye-visible.svg" alt=""
                                              class="hide-password">
                                     </button>
                                 </div>
@@ -131,9 +144,9 @@
                                     <label for="pass">Password</label>
                                     <input class="password" type="password" id="pass" placeholder="Password">
                                     <button class="show-hide-password" type="button">
-                                        <img src="../build/assets/svgs/eye-hidden.svg" alt=""
+                                        <img src="../src/assets/svgs/eye-hidden.svg" alt=""
                                              class="show-password">
-                                        <img src="../build/assets/svgs/eye-visible.svg" alt=""
+                                        <img src="../src/assets/svgs/eye-visible.svg" alt=""
                                              class="hide-password">
                                     </button>
                                 </div>
@@ -142,9 +155,9 @@
                                     <input class="password" type="password" id="retry-pass"
                                            placeholder="Retry Password">
                                     <button class="show-hide-password" type="button">
-                                        <img src="../build/assets/svgs/eye-hidden.svg" alt=""
+                                        <img src="../src/assets/svgs/eye-hidden.svg" alt=""
                                              class="show-password">
-                                        <img src="../build/assets/svgs/eye-visible.svg" alt=""
+                                        <img src="../src/assets/svgs/eye-visible.svg" alt=""
                                              class="hide-password">
                                     </button>
                                 </div>
@@ -167,19 +180,19 @@
         <section class="web__navbar">
             <div class="web__navbar--list">
                 <!--Add 'tab--active' class on
-            active route 'web__navbar--tab--wrapper'-->
+        active route 'web__navbar--tab--wrapper'-->
                 <div class="web__navbar--tab--wrapper">
                     <a href="#" class="web__navbar--link">Как заработать</a>
                     <div class="web__navbar--dropdown">
                         <a href="#" class="dropdown__link">
-                            <img src="../build/assets/svgs/quick-start.svg" alt="">
+                            <img src="../src/assets/svgs/quick-start.svg" alt="">
                             <div>
                                 <p>Быстрый старт</p>
                                 <span>Что такое учебный и торговый счета</span>
                             </div>
                         </a>
                         <a href="#" class="dropdown__link">
-                            <img src="../build/assets/svgs/transfers.svg" alt="">
+                            <img src="../src/assets/svgs/transfers.svg" alt="">
                             <div>
                                 <p>Пополнение и снятие</p>
                                 <span>Пополнение счета и снятие средств</span>
@@ -201,7 +214,7 @@
                 <div class="history__link--wrapper">
                     <a href="#" class="history__link">Главная</a>
                     <a href="#" class="history__link history__link--active">
-                        <img src="../build/assets/svgs/chevron-right.svg" alt=""> Обучение
+                        <img src="../src/assets/svgs/chevron-right.svg" alt=""> Обучение
                     </a>
                 </div>
             </div>
@@ -222,9 +235,9 @@
                 <h3>Онлайн курсы академии Forex Сlub</h3>
                 <div class="web__video--container">
                     <div class="web__video">
-                        <img src="../build/assets/images/education-video.png" alt="">
+                        <img src="../src/assets/images/education-video.png" alt="">
                         <button class="web__video--play">
-                            <img src="../build/assets/svgs/video-play.svg" alt="">
+                            <img src="../src/assets/svgs/video-play.svg" alt="">
                         </button>
                     </div>
                 </div>
@@ -234,26 +247,24 @@
 
         <!--Begin Trading section-->
         <section class="education__trading">
-            <h3>Forex Club открывает мир трейдинга
-                и инвестиций для всех:
+            <h3>Forex Club открывает мир трейдинга и инвестиций для всех:
             </h3>
             <div class="trading__description">
                 <div class="trading__description--content">
                     <h4>Собственные разработки</h4>
-                    <p>Программа разработана для людей, которые только <br/> начинают
-                        знакомиться с финансовыми рынками <br/>форекс.
+                    <p>Программа разработана для людей, которые только <br/> начинают знакомиться с финансовыми рынками
+                        <br/>форекс.
                     </p>
                     <p>В рамках базового курса трейдинга вы узнаете:</p>
                     <p class="web__dot">как торговать в терминале Libertex,</p>
-                    <p class="web__dot">как принимать правильные решения торгуя <br/>
-                        на Форекс.
+                    <p class="web__dot">как принимать правильные решения торгуя <br/> на Форекс.
                     </p>
                     <p>И получите доступ к готовым торговым <br/> стратегиям.</p>
                 </div>
                 <div class="trading__description--content">
                     <h4>Торговые инструменты</h4>
-                    <p>19 лет мы отрабатывали навыки преподавания и <br/> накапливали знания о трейдинге.
-                        Результатом <br/> нашего труда стал этот курс.
+                    <p>19 лет мы отрабатывали навыки преподавания и <br/> накапливали знания о трейдинге. Результатом
+                        <br/> нашего труда стал этот курс.
                     </p>
                     <p>В рамках базового курса трейдинга вы узнаете:</p>
                     <p class="web__dot">торговать на платформах MetaTrader 4 и Libertex,</p>
@@ -263,9 +274,8 @@
                 <div class="trading__description--content">
                     <h4>Выгодные условия торговли</h4>
                     <p>
-                        Курс включает в себя все преимущества программы <br/> повышения квалификации.
-                        Главным отличием <br/> является индивидуальный подход и разработка <br/>
-                        учебного плана специально под вас.
+                        Курс включает в себя все преимущества программы <br/> повышения квалификации. Главным отличием
+                        <br/> является индивидуальный подход и разработка <br/> учебного плана специально под вас.
                     </p>
                     <p>В индивидуальной программе вам будут доступны:</p>
                     <p class="web__dot">Личные консультации и обучение Форекс в наших <br/> офисах</p>
@@ -287,8 +297,8 @@
                 компании.
             </p>
             <h4>Самостоятельное изучение</h4>
-            <p>Вам будут доступны все материалы академии трейдинга. Вы сможете проходить контрольные тесты и общаться
-                с<br/> другими студентами и преподавателями на форуме.
+            <p>Вам будут доступны все материалы академии трейдинга. Вы сможете проходить контрольные тесты и общаться с
+                <br/> другими студентами и преподавателями на форуме.
             </p>
         </section>
         <!--./End Features section-->
@@ -408,22 +418,22 @@
                 <p>Пополнение счета и снятие средств</p>
                 <div class="footer__payment--methods">
                     <a href="https://www.visa.com.ru/" target="_blank">
-                        <img src="../build/assets/svgs/visa.svg" alt="">
+                        <img src="../src/assets/svgs/visa.svg" alt="">
                     </a>
                     <a href="https://www.mastercard.ru/ru-ru.html" target="_blank">
-                        <img src="../build/assets/svgs/master-card.svg" alt="">
+                        <img src="../src/assets/svgs/master-card.svg" alt="">
                     </a>
                     <a href="https://pay.yandex.ru/" target="_blank">
-                        <img src="../build/assets/svgs/yandex-pay.svg" alt="">
+                        <img src="../src/assets/svgs/yandex-pay.svg" alt="">
                     </a>
                     <a href="https://www.mnp.ca/" target="_blank">
-                        <img src="../build/assets/svgs/mnp.svg" alt="">
+                        <img src="../src/assets/svgs/mnp.svg" alt="">
                     </a>
                     <a href="https://www.paypal.com/ru/home" target="_blank">
-                        <img src="../build/assets/svgs/paypal.svg" alt="">
+                        <img src="../src/assets/svgs/paypal.svg" alt="">
                     </a>
                     <a href="https://www.webmoney.ru/" target="_blank">
-                        <img src="../build/assets/svgs/webmoney.svg" alt="">
+                        <img src="../src/assets/svgs/webmoney.svg" alt="">
                     </a>
                 </div>
             </div>
@@ -435,7 +445,7 @@
     </footer>
     <!--./End Footer-->
 </div>
-<script src="../build/dist/js/custom.min.js"></script>
+<script src="../dist/js/custom.min.js"></script>
 </body>
 
 </html>
