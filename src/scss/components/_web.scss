@@ -1,20 +1,85 @@
 .web {
-    &__login {
-	@extend .btn-primary;
-	height: 44px;
-    }
-
     &__language {
-	@extend .btn-primary-2;
 	width: 44px;
 	height: 44px;
-	border-radius: 100%;
-	justify-content: center;
+	border-radius: 50px;
+	overflow: hidden;
 	margin-right: 0 !important;
+	border: 1px solid $primary;
+	position: absolute;
+	z-index: 9;
+	top: 15px;
+	right: 15px;
+	transition: height .5s ease;
+	@include desktop(){
+	    top: 43px;
+	    right: 0;
+	}
+	@include between(md, lg) {
+	    right: 3%;
+	}
+	@include between(lg, xl) {
+	    right: 4%;
+	}
+
+	&:hover {
+	    background-color: $background-200;
+	}
+
+	&--btn {
+	    margin-bottom: 20px;
+	    height: 44px;
+	    padding: 0 10px;
+
+	    img {
+		transition: transform .5s ease;
+	    }
+	}
+
+	&--list {
+	    display: flex;
+	    justify-content: center;
+	    flex-direction: column;
+	    align-items: center;
+	    padding-bottom: 20px;
+	}
+
+	&--item {
+	    margin-bottom: 5px;
+	    justify-content: center;
+	    width: 100%;
+	    transition: background-color .5s ease;
+
+	    &:hover {
+		background-color: rgba($primary, 0.3);
+	    }
+
+	    &:last-of-type {
+		margin-bottom: 0;
+	    }
+
+	    img {
+		width: 20px;
+	    }
+
+	    &.active {
+		background-color: $primary;
+	    }
+	}
+
+	&.open {
+	    height: 154px;
+
+	    .web__language--btn {
+		img {
+		    transform: rotate(180deg);
+		}
+	    }
+	}
     }
 
     &__navbar {
-	$webnav: #{web__navbar};
+	$webnav: #{&};
 
 	&--list {
 	    display: flex;
@@ -61,11 +126,11 @@
 	    &:hover {
 		background-color: $background-100;
 
-		.#{$webnav}--link {
+		#{$webnav}--link {
 		    color: $primary;
 		}
 
-		.#{$webnav}--dropdown {
+		#{$webnav}--dropdown {
 		    @include desktop() {
 			opacity: 1;
 			transform: translateY(0);
@@ -82,7 +147,7 @@
 	    &.tab--active {
 		background-color: $background-100;
 
-		.#{$webnav}--link {
+		#{$webnav}--link {
 		    color: $primary;
 		}
 
@@ -95,14 +160,14 @@
 	    &.tab--mob--active {
 		background-color: $background-100;
 
-		.#{$webnav}--dropdown {
+		#{$webnav}--dropdown {
 		    @include desktop(max) {
 			height: 180px;
 		    }
 		}
 	    }
 
-	    .#{$webnav}--link {
+	    #{$webnav}--link {
 		font-size: 16px;
 		text-align: center;
 		color: $gray-200;
@@ -188,7 +253,7 @@
 		@include desktop() {
 		    margin-right: 20px;
 		}
-		@include tablet(max){
+		@include tablet(max) {
 		    font-size: 12px;
 		}
 

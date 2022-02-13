@@ -1,6 +1,6 @@
 .modal {
     display: none;
-    $modal: #{modal};
+    $modal: #{&};
 
     &--active {
 	display: block;
@@ -34,7 +34,6 @@
     }
 
     &__container {
-	$modal: #{modal};
 	background-color: $background-200;
 	border-radius: 24px;
 	width: 80%;
@@ -154,7 +153,7 @@
     }
 
     &__buttons {
-	.#{$modal}__submit {
+	#{$modal}__submit {
 	    @extend .btn-primary;
 	    width: 100%;
 	    border: none;

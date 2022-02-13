@@ -8,7 +8,6 @@
     }
 
     &__link {
-	@extend .btn-primary;
 	width: 342px;
 	height: 56px;
 	@include flex-center();

@@ -5,35 +5,35 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../build/dist/css/custom.min.css">
+    <link rel="stylesheet" href="../dist/css/custom.min.css">
     <title>Terms of Service</title>
 </head>
 
 <style>
     @font-face {
         font-family: 'Roboto';
-        src: url("../build/assets/fonts/Roboto-Regular.ttf") format('truetype');
+        src: url("../src/assets/fonts/Roboto-Regular.ttf") format('truetype');
         font-weight: 400;
         font-display: swap;
     }
-
+    
     @font-face {
         font-family: 'Roboto';
-        src: url("../build/assets/fonts/Roboto-Bold.ttf") format('truetype');
+        src: url("../src/assets/fonts/Roboto-Bold.ttf") format('truetype');
         font-weight: 700;
         font-display: swap;
     }
-
+    
     @font-face {
         font-family: 'Inter';
-        src: url("../build/assets/fonts/Inter-Regular.ttf") format('truetype');
+        src: url("../src/assets/fonts/Inter-Regular.ttf") format('truetype');
         font-weight: 400;
         font-display: swap;
     }
-
+    
     @font-face {
         font-family: 'Inter';
-        src: url("../build/assets/fonts/Inter-Light.ttf") format('truetype');
+        src: url("../src/assets/fonts/Inter-Light.ttf") format('truetype');
         font-weight: 300;
         font-display: swap;
     }
@@ -49,21 +49,34 @@
             <div class="nav__header">
                 <a href="#" class="nav__logo">Logo</a>
                 <button class="nav__list--open">
-                    <img src="../build/assets/svgs/hamburger.svg" alt="">
+                    <img src="../src/assets/svgs/hamburger.svg" alt="">
                 </button>
+                <div class="nav__list--item web__language">
+                    <button class="web__language--btn">
+                        <img src="../src/assets/svgs/lang-icon.svg" alt="">
+                    </button>
+                    <div class="web__language--list">
+                        <button class="web__language--item">
+                            <img src="../src/assets/svgs/us.svg" alt="">
+                        </button>
+                        <button class="web__language--item active">
+                            <img src="../src/assets/svgs/ru.svg" alt="">
+                        </button>
+                        <button class="web__language--item">
+                            <img src="../src/assets/svgs/us.svg" alt="">
+                        </button>
+                    </div>
+                </div>
             </div>
             <div class="nav__list">
                 <p class="nav__list--item">8-800-2002-600</p>
-                <button class="nav__list--item">
-                    <img src="../build/assets/svgs/call.svg" alt="">
+                <button class="nav__list--item btn-primary-2">
+                    <img src="../src/assets/svgs/call.svg" alt="">
                     Онлайн звонок
                 </button>
-                <button class="nav__list--item web__login">Login</button>
-                <button class="nav__list--item web__language">
-                    <img src="../build/assets/svgs/lang-icon.svg" alt="">
-                </button>
+                <button class="nav__list--item btn-primary web__login">Login</button>
                 <button class="nav__list--close">
-                    <img src="../build/assets/svgs/close-menu.svg" alt="">
+                    <img src="../src/assets/svgs/close-menu.svg" alt="">
                 </button>
             </div>
         </nav>
@@ -76,7 +89,7 @@
             <div class="modal__wrapper">
                 <div class="modal__container">
                     <button class="modal__close" type="button">
-                        <img src="../build/assets/svgs/close-modal.svg" alt="">
+                        <img src="../src/assets/svgs/close-modal.svg" alt="">
                     </button>
                     <form action="#" class="login">
                         <div class="modal__container--items">
@@ -90,9 +103,9 @@
                                     <label for="login-pass">Password</label>
                                     <input class="password" type="password" id="login-pass" placeholder="Password">
                                     <button class="show-hide-password" type="button">
-                                        <img src="../build/assets/svgs/eye-hidden.svg" alt=""
+                                        <img src="../src/assets/svgs/eye-hidden.svg" alt=""
                                              class="show-password">
-                                        <img src="../build/assets/svgs/eye-visible.svg" alt=""
+                                        <img src="../src/assets/svgs/eye-visible.svg" alt=""
                                              class="hide-password">
                                     </button>
                                 </div>
@@ -131,9 +144,9 @@
                                     <label for="pass">Password</label>
                                     <input class="password" type="password" id="pass" placeholder="Password">
                                     <button class="show-hide-password" type="button">
-                                        <img src="../build/assets/svgs/eye-hidden.svg" alt=""
+                                        <img src="../src/assets/svgs/eye-hidden.svg" alt=""
                                              class="show-password">
-                                        <img src="../build/assets/svgs/eye-visible.svg" alt=""
+                                        <img src="../src/assets/svgs/eye-visible.svg" alt=""
                                              class="hide-password">
                                     </button>
                                 </div>
@@ -142,9 +155,9 @@
                                     <input class="password" type="password" id="retry-pass"
                                            placeholder="Retry Password">
                                     <button class="show-hide-password" type="button">
-                                        <img src="../build/assets/svgs/eye-hidden.svg" alt=""
+                                        <img src="../src/assets/svgs/eye-hidden.svg" alt=""
                                              class="show-password">
-                                        <img src="../build/assets/svgs/eye-visible.svg" alt=""
+                                        <img src="../src/assets/svgs/eye-visible.svg" alt=""
                                              class="hide-password">
                                     </button>
                                 </div>
@@ -251,32 +264,33 @@
             <div class="terms__service--description">
                 <h3>Политика конфиденциальности и данные пользователей</h3>
                 <p>
-                    Заботится об обеспечении конфиденциальности ваших данных. В Политике
-                    конфиденциальности WhatsApp описаны применяемые нами методы обработки данных <br/> (включая
-                    сообщения), в том числе
-                    какую информацию мы собираем и получаем от вас, как мы её используем и предоставляем и какие у
-                    вас есть права в связи с <br/> обработкой информации о вас.
+                    Заботится об обеспечении конфиденциальности ваших данных. В Политике конфиденциальности WhatsApp
+                    описаны применяемые нами методы обработки данных <br/> (включая сообщения), в том числе какую
+                    информацию мы собираем и получаем от
+                    вас, как мы её используем и предоставляем и какие у вас есть права в связи с <br/> обработкой
+                    информации о вас.
                 </p>
                 <h3>Допустимое использование наших Услуг</h3>
                 <p>
-                    Наши Условия и политики. Вы обязаны использовать наши Услуги в соответствии с нашими
-                    Условиями и опубликованными политиками. Если вы нарушите наши<br/> Условия или политики, мы можем
-                    применить
-                    санкции к вашему аккаунту, в том числе отключить или временно заблокировать ваш аккаунт, и в этом
-                    случае
-                    вы <br/> соглашаетесь не создавать другой аккаунт без нашего разрешения. Отключение или временная
-                    блокировка вашего
-                    аккаунта будут выполняться в соответствии с <br/>условиями раздела «Прекращение отношений» ниже.
+                    Наши Условия и политики. Вы обязаны использовать наши Услуги в соответствии с нашими Условиями и
+                    опубликованными политиками. Если вы нарушите наши<br/> Условия или политики, мы можем применить
+                    санкции к вашему аккаунту, в том числе
+                    отключить или временно заблокировать ваш аккаунт, и в этом случае вы <br/> соглашаетесь не создавать
+                    другой аккаунт без нашего разрешения. Отключение или временная блокировка вашего аккаунта будут
+                    выполняться в соответствии с <br/>условиями
+                    раздела «Прекращение отношений» ниже.
                 </p>
                 <h3>Услуги третьих лиц</h3>
                 <p>
                     Наши Услуги позволяют вам использовать веб-сайты, приложения, контент, другие продукты и услуги
-                    третьих лиц, а также Продукты Компаний Facebook,<br/> осуществлять доступ к ним и взаимодействовать с
-                    ними. Например, вы можете использовать сторонние службы резервного копирования данных (такие как
-                    iCloud <br/>или Google Диск), интегрированные в наши Услуги, а также использовать кнопку «Поделиться» на
-                    сторонних веб-сайтах, чтобы отправить информацию своим <br/>контактам в WhatsApp. Помните, что настоящие
-                    Условия и наша Политика конфиденциальности распространяются только на использование наших Услуг.<br/>
-                    Использование вами сторонних товаров или услуг или Продуктов Компаний Facebook регулируется
+                    третьих лиц, а также Продукты Компаний Facebook,<br/> осуществлять доступ к ним и взаимодействовать
+                    с ними. Например, вы можете использовать
+                    сторонние службы резервного копирования данных (такие как iCloud <br/>или Google Диск),
+                    интегрированные в наши Услуги, а также использовать кнопку «Поделиться» на сторонних веб-сайтах,
+                    чтобы отправить информацию своим <br/>контактам
+                    в WhatsApp. Помните, что настоящие Условия и наша Политика конфиденциальности распространяются
+                    только на использование наших Услуг.<br/> Использование вами сторонних товаров или услуг или
+                    Продуктов Компаний Facebook регулируется
                     условиями и политиками конфиденциальности в отношении <br/>таких товаров или услуг.
                 </p>
             </div>
@@ -335,22 +349,22 @@
                 <p>Пополнение счета и снятие средств</p>
                 <div class="footer__payment--methods">
                     <a href="https://www.visa.com.ru/" target="_blank">
-                        <img src="../build/assets/svgs/visa.svg" alt="">
+                        <img src="../src/assets/svgs/visa.svg" alt="">
                     </a>
                     <a href="https://www.mastercard.ru/ru-ru.html" target="_blank">
-                        <img src="../build/assets/svgs/master-card.svg" alt="">
+                        <img src="../src/assets/svgs/master-card.svg" alt="">
                     </a>
                     <a href="https://pay.yandex.ru/" target="_blank">
-                        <img src="../build/assets/svgs/yandex-pay.svg" alt="">
+                        <img src="../src/assets/svgs/yandex-pay.svg" alt="">
                     </a>
                     <a href="https://www.mnp.ca/" target="_blank">
-                        <img src="../build/assets/svgs/mnp.svg" alt="">
+                        <img src="../src/assets/svgs/mnp.svg" alt="">
                     </a>
                     <a href="https://www.paypal.com/ru/home" target="_blank">
-                        <img src="../build/assets/svgs/paypal.svg" alt="">
+                        <img src="../src/assets/svgs/paypal.svg" alt="">
                     </a>
                     <a href="https://www.webmoney.ru/" target="_blank">
-                        <img src="../build/assets/svgs/webmoney.svg" alt="">
+                        <img src="../src/assets/svgs/webmoney.svg" alt="">
                     </a>
                 </div>
             </div>
@@ -362,7 +376,7 @@
     </footer>
     <!--./End Footer-->
 </div>
-<script src="../build/dist/js/custom.min.js"></script>
+<script src="../dist/js/custom.min.js"></script>
 </body>
 
 </html>

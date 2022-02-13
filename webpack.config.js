@@ -30,7 +30,7 @@ var config = {
 
 let localConfig = Object.assign({}, config, {
 	output: {
-		path: path.resolve(__dirname, './build/dist/js/'),
+		path: path.resolve(__dirname, './dist/js/'),
 		filename: 'custom.min.js',
 	},
 });
